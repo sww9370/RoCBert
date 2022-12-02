@@ -1,0 +1,7 @@
+train_data/special_tokens_map.json filter=lfs diff=lfs merge=lfs -text
+train_data/tokenizer_config.json filter=lfs diff=lfs merge=lfs -text
+train_data/vocab.txt filter=lfs diff=lfs merge=lfs -text
+train_data/word_pronunciation.json filter=lfs diff=lfs merge=lfs -text
+train_data/word_shape.json filter=lfs diff=lfs merge=lfs -text
+train_data/img_embed.shape_embed filter=lfs diff=lfs merge=lfs -text
+train_data/prounciation.proun_id filter=lfs diff=lfs merge=lfs -text
