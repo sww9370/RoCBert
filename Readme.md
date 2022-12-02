@@ -1,8 +1,17 @@
-#RoCBert: Robust Chinese Bert with Multimodal Contrastive Pretraining
+<h1 align="center">
+    <p> RoCBert: Robust Chinese Bert with Multimodal Contrastive Pretraining</p>
+</h1>
 
----
+<h5 align="center">
+    <p>Hui Su, Weiwei Shi, Xiaoyu Shen, Xiao Zhou, Tuo Ji, Jiarui Fang, and Jie Zhou</p>
+</h5>
 
-**Authors**: Hui Su, Weiwei Shi, Xiaoyu Shen, Xiao Zhou, Tuo Ji, Jiarui Fang, and Jie Zhou
+<p align="center">
+    <br>
+    <img src="/uploads/DE82E4C461FB4E8EB934330D4FD8BE61/image.png" width="200"/>
+    <br>
+<p>
+
 
 This repository contains pretrain code for [RoCBert](https://aclanthology.org/2022.acl-long.65.pdf), model is avaliable at [huggingface model hub](https://huggingface.co/weiweishi/roc-bert-base-zh). 
 
@@ -18,26 +27,50 @@ year={2022}
 }
 ```
 
-
 ## News
----
-* [2022/12/01] RoCBert is publicly released!
+
+* [2022/11/08] 🔥 RocBert has now joined HuggingFace in [Transformers](https://huggingface.co/docs/transformers/main/en/model_doc/roc_bert) ! 
+* [2022/05/01] 😊 RocBert is accepted to ACL 2022!
 
 
 
-## Requirements
+## What is RoCBert
 
----
+RocBert is a pre-trained Chinese language model that is designed from the ground up to be robust against maliciously crafted adversarial texts such as misspellings, homograph attacks, and other forms of deception.
 
-* Python>=3.8
-* transformers==4.20.1
-* torch==1.12.0
-* pypinyin
+<img width="500" src="/uploads/3704E947FD8E44809BEE3DF45F14464A/image.png" alt="image.png" />
+
+This property is crucial in downstream applications like content moderation.
+
+RocBert differs from the classic Bert architecture in the following ways:
+
+- besides token ids, the model also takes phonetic features and glyph features as input
+- the model is also pre-trained with a contrastive learning objective that stabilizes the feature space against synthetic attacks
 
 
-## QuickTour
 
----
+## How to use
+
+**Finetune**
+
+RoCBert is now avaliable at [here](https://huggingface.co/weiweishi/roc-bert-base-zh). It's convenient to load base-model and finetune it. For example:
+
+```python
+
+from modeling_roc_bert import RoCBertForSequenceClassification
+from tokenization_roc_bert import RoCBertTokenizer
+
+tokenizer = RoCBertTokenizer.from_pretrained("weiweishi/roc-bert-base-zh")
+model = RoCBertForSequenceClassification.from_pretrained("weiweishi/roc-bert-base-zh")
+
+dataset = Dataset()  # load subtask dataset 
+trainer = Trainer() # load trainer 
+trainer.train(model, dataset)  # start finetune subtask
+
+```
+
+
+
 
 **Pretrain**
 
@@ -75,3 +108,13 @@ python3 execute_pretrain.py \
 --shape_embed_path="train_data/img_embed.shape_embed" `#shape<->embed map list`
 
 ```
+
+
+
+
+## Requirements
+
+* Python>=3.8
+* transformers==4.20.1
+* torch==1.12.0
+* pypinyin
