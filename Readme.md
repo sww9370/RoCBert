@@ -6,9 +6,12 @@
     <p>Hui Su, Weiwei Shi, Xiaoyu Shen, Xiao Zhou, Tuo Ji, Jiarui Fang, and Jie Zhou</p>
 </h5>
 
+
+
+
 <p align="center">
     <br>
-    <img src="/uploads/DE82E4C461FB4E8EB934330D4FD8BE61/image.png" width="200"/>
+    <img src="https://user-images.githubusercontent.com/8551423/205233028-b577777c-5cc6-42b7-b2cc-a9613fd1fd69.png" width="200"/>
     <br>
 <p>
 
@@ -38,7 +41,7 @@ year={2022}
 
 RocBert is a pre-trained Chinese language model that is designed from the ground up to be robust against maliciously crafted adversarial texts such as misspellings, homograph attacks, and other forms of deception.
 
-<img width="500" src="/uploads/3704E947FD8E44809BEE3DF45F14464A/image.png" alt="image.png" />
+<img width="500" src="https://user-images.githubusercontent.com/8551423/205233370-e72f9ba9-2382-44a0-a683-2c673e79d9b6.png" alt="image.png" />
 
 This property is crucial in downstream applications like content moderation.
 
